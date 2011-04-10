@@ -13,12 +13,21 @@
 			$("#x-coordinate").text( x );
 			$("#y-coordinate").text( y );
 		});
+		$("#dialog").dialog();
+});
+
 	});
+	</script>
+	<script>
+	function openPage(url) {
+    var link = url;
+    window.open(link, 'winMenu', 'width=600,height=400,location=1,menubar=1,resizable=1,scrollbars=1,status=1,toolbar=1');
+}
 	</script>
 	</head>
 	<body>
 		<map name="buildings">
-			<area href="" onclick="" alt="Pupin" title="Pupin" shape="rect" coords="265, 26, 328, 49">
+			<area href="javascript:void()" onclick="openPage('http://google.com')" alt="Pupin" title="Pupin" shape="rect" coords="265, 26, 328, 49">
 			<area href="" alt="NorthWestCorner" title="NoCo" shape="poly" coords="235, 26, 265, 26, 265, 50, 258, 50, 258, 96, 235, 96, 235, 26">
 			<area href="" alt="SchapiroCESPR" title="ShapiroCESPR" shape="rect" coords="336, 32, 398, 72">
 			<area href="" alt="Mudd" title="Mudd" shape="rect" coords="408, 30, 500, 60">
