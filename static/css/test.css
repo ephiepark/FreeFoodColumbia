@@ -58,9 +58,14 @@ li a:link, a:visited {
 li a:hover, a:active {
     text-decoration: underline;
 	
+	
 }
 a:active {
     text-decoration: underline;
+}
+
+div#style{
+	visiblity: hidden;
 }
 ol span {
     display: block;
