@@ -1,4 +1,6 @@
-# Django settings for FreeFoodColumbia project.
+import os
+import os.path
+
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -43,15 +45,6 @@ USE_I18N = True
 # calendars according to the current locale
 USE_L10N = True
 
-# Absolute filesystem path to the directory that will hold user-uploaded files.
-# Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = ''
-
-# URL that handles the media served from MEDIA_ROOT. Make sure to use a
-# trailing slash if there is a path component (optional in other cases).
-# Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = ''
-
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
@@ -68,24 +61,36 @@ TEMPLATE_LOADERS = (
 )
 
 MIDDLEWARE_CLASSES = (
-#    'django.middleware.common.CommonMiddleware',
-#    'django.contrib.sessions.middleware.SessionMiddleware',
-#    'django.middleware.csrf.CsrfViewMiddleware',
-#    'django.contrib.auth.middleware.AuthenticationMiddleware',
-#    'django.contrib.messages.middleware.MessageMiddleware',
+   'django.middleware.common.CommonMiddleware',
+   'django.contrib.sessions.middleware.SessionMiddleware',
+   'django.middleware.csrf.CsrfViewMiddleware',
+   'django.contrib.auth.middleware.AuthenticationMiddleware',
+   'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'FreeFoodColumbia.urls'
-
-TEMPLATE_DIRS = (
-  'templates',
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.request',
 )
+
+ROOT_URLCONF = 'urls'
+
+DIRNAME = os.path.abspath(os.path.split(os.path.split(__file__)[0])[0])
+PROJECT_PATH = os.path.abspath(os.path.split(os.path.split(__file__)[0])[0])
+
+TEMPLATE_DIRS = ()
+for root, dirs, files in os.walk(PROJECT_PATH):
+    if 'templates' in dirs: TEMPLATE_DIRS = TEMPLATE_DIRS + (os.path.join(root, 'templates'),)
+
+MEDIA_ROOT = os.path.join(DIRNAME, 'static/')
+
+MEDIA_URL="/static/"
 
 INSTALLED_APPS = (
-  'FreeFoodColumbia.freefoodcolumbia',
+  'freefoodcolumbia',
 #    'django.contrib.auth',
 #    'django.contrib.contenttypes',
 #    'django.contrib.sessions',

@@ -1,14 +1,11 @@
-from django.http import HttpResponse
-from django.template.loader import get_template
-from django.template import Context
+from django.shortcuts import render_to_response
+from django.template import RequestContext
 from freefoodcolumbia.models import Event
 
 def index(request):
-  name = 'freefoodColumbia App'
+  name = 'freefoodColumbia App' # whats this for?
   event_list = Event.objects.all()
-  t = get_template('trash.tmpl')
-  html = t.render(Context({'event_list':event_list}))
-  return HttpResponse(html)
+  return render_to_response('trash.tmpl', {'event_list':event_list}, context_instance=RequestContext(request))
 
 
 # Create your views here.
