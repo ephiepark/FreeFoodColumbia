@@ -1,5 +1,5 @@
-				#main {
-    width: 700;
+#main {
+    width: 1000;
     margin: 0 auto;
 }
 #map {
@@ -16,7 +16,7 @@ h1 {
 }
 #list {
     float: left;
-    margin-top: -10px;
+    margin-top: -15px;
     width: 290px;
 }
 li {
