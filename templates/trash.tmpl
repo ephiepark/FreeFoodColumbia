@@ -28,16 +28,23 @@
 		</map>
 		<div id=main>
 		<h1>Free Food Columbia</h1>
+<<<<<<< HEAD
 		<div id=map><p>X:<span id="x-coordinate"></span></p>
 	<p>Y:<span id="y-coordinate"></span></p>
 	<img id=image src="http://oi53.tinypic.com/28uhj47.jpg" usemap ="#buildings" width=700></div>
+=======
+		<div id=map>
+		<p><a href="/form">Submit your Free Food Event!"</a></p>
+		<img src="http://oi53.tinypic.com/28uhj47.jpg" width=700>
+		</div>
+>>>>>>> ad2f2176073dbade99534d560db4005c571ff8f0
 		<div id=list>
 			<ol>
 			{% for event in event_list %}
 			<li>
-			<span class=date>{{event.date}}</span>
-			<span class=location>{{event.location}}</span>
-			<span class=description>{{event.description}}</span>
+			<span class=date><b>Time: </b>{{event.date}}</span>
+			<span class=location><b>Location: </b>{{event.location}}</span>
+			<span class=description><b>Event: </b>{{event.description}}</span>
 			<span class=source><a href = {{event.source}}> See More </a></span>
 			</li>
 			{% endfor %}

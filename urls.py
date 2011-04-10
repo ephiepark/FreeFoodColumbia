@@ -1,13 +1,14 @@
 from os import path as os_path
 from django.conf import settings
 from django.conf.urls.defaults import *
-from FreeFoodColumbia.freefoodcolumbia.views import index
+from FreeFoodColumbia.freefoodcolumbia.views import index, form
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
 
 urlpatterns = patterns('',
                        ('^$',index),
+                       ('^form/$',form),
     # Example:
     # (r'^FreeFoodColumbia/', include('FreeFoodColumbia.foo.urls')),
 
