@@ -1,0 +1,43 @@
+		#main {
+    width: 700;
+    margin: 0 auto;
+}
+#map {
+    float: right;
+}
+h1 {
+    display: block;
+    text-align: center;
+    color: #6daed1;
+}
+#list {
+    float: left;
+    margin-top: 0px;
+    width: 290px;
+}
+#formdiv {
+    padding: 10px;
+    background: #b9d0e9;
+    border: 3px solid #ccc;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+}
+li {
+    list-style-type: none;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #b9d0e9;
+    border: 3px solid #ccc;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+}
+li a:link, a:visited {
+	color: white;
+}
+ol span {
+    display: block;
+}
