@@ -4,12 +4,12 @@
         <link rel="stylesheet" href="{{MEDIA_URL}}css/test.css" type="text/css" />
 	</head>
 	<p>
-	Yummy Food in John Jay
+	Yummy Food in {{location}}
 	</p>
 		
 	<ol>
 			{% for event in event_list %}
-			At {{event.location}}
+					
 				<div id ="event" >
 				<li>
 				<span class=date><b>Time: </b>{{event.date}}</span>
