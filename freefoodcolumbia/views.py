@@ -20,7 +20,10 @@ def index(request):
   return render_to_response('trash.tmpl', {'event_list':event_list2}, context_instance=RequestContext(request))
 
 def parseTime(year, month, dateD, strTime):
-  indexColon = strTime.rfind(":")
+  strTime = strTime.lstrip()
+  strTime = strTime.rstrip()
+  
+  indexColon = strTime.find(":")
   if indexColon != -1:
     if strTime[indexColon-2:indexColon-1].isdigit():
       hour = int(strTime[indexColon-2:indexColon])
@@ -28,11 +31,11 @@ def parseTime(year, month, dateD, strTime):
       hour = int(strTime[indexColon-1:indexColon])
     minute = int(strTime[indexColon+1:indexColon+3])
   else:
+    hour = int(strTime.split(" ", 1)[0])
     minute = 0
-    hour = int(strTime[0:2])
 
   if strTime.rfind("pm") != -1 and strTime.rfind("am") == -1:
-    if hour == 12:
+    if hour == 12: 
       hour = 0
     hour += 12
 
