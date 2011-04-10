@@ -35,18 +35,29 @@
 =======-->
 		<h1><img src="http://i56.tinypic.com/rh1myd.png"/></h1>
 		<div id=map>
+<<<<<<< HEAD
 		<p><a href="/form">Submit your Free Food Event!</a></p>
+=======
+		
+	<FORM>
+	<INPUT TYPE="BUTTON" VALUE="Report Free Food!" ONCLICK="window.location.href='/form'"> 
+	</FORM>
+
+>>>>>>> d6893cff874454f0dcc1e018d5d2d3b543e8c2ff
 		<img src="http://oi53.tinypic.com/28uhj47.jpg" width=700>
 		</div>
 		<div id=list>
+		
 			<ol>
 			{% for event in event_list %}
+			<div id ="event" >
 			<li>
 			<span class=date><b>Time: </b>{{event.date}}</span>
 			<span class=location><b>Location: </b>{{event.location}}</span>
 			<span class=description><b>Event: </b>{{event.description}}</span>
 			<span class=source><a href = {{event.source}}> See More </a></span>
 			</li>
+			</div>
 			{% endfor %}
 			</ol>
 		</div>

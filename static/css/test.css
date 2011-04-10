@@ -30,6 +30,17 @@ li {
     -khtml-border-radius: 20px;
     border-radius: 20px;
 }
+
+p.button{
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #b9d0e9;
+    border: 3px solid #6daed1;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+}
 li a:link, a:visited {
     color: #4b8cb0;
     text-align: right;
@@ -38,6 +49,11 @@ li a:link, a:visited {
     border-top: 1px dotted #6daed1;
 }
 li a:hover, a:active {
+    text-decoration: underline;
+	
+	
+}
+a:active {
     text-decoration: underline;
 }
 ol span {
