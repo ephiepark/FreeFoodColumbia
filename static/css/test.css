@@ -34,12 +34,13 @@ li {
 
 #foodbutton{
     list-style-type: none;
-    margin-bottom: 10px;
+    margin: 0px;
 	text-align: center;
     padding: 10px;
     background: #FF9933;
     border: 3px solid #FF3300;
-	text-decoration: underline;
+    font-weight: bold;
+    font-size: 14px;
     -moz-border-radius: 20px;
     -webkit-border-radius: 20px;
     -khtml-border-radius: 20px;

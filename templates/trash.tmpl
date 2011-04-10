@@ -28,20 +28,17 @@
 			<area href="" alt="Lerner" title="Lerner" shape="rect" coords="234, 480, 305, 525">
 		</map>
 		<div id=main>
-<!--<div id=map>
-	<img id=image src="http://oi53.tinypic.com/28uhj47.jpg" usemap ="#buildings" width=700></div>
--->
 		<h1><img src="http://i56.tinypic.com/rh1myd.png"/></h1>
 		<div id=map>
-	<FORM>
-	<INPUT TYPE="BUTTON" id = "foodButton" VALUE="Report Free Food!" ONCLICK="window.location.href='/form'"> 
-	</FORM>
-	<p>X:<span id="x-coordinate"></span></p>
-	<p>Y:<span id="y-coordinate"></span></p>
+	<!--<p>X:<span id="x-coordinate"></span></p>
+	<p>Y:<span id="y-coordinate"></span></p>-->
 		<img id=image src="http://oi53.tinypic.com/28uhj47.jpg" usemap ="#buildings" width=700>
 		</div>
-		<div id=list>
-		
+		<div id=list><br>
+		<span style="text-align: right">
+	<FORM>
+	<INPUT TYPE="BUTTON" id = "foodButton" VALUE="Report Free Food!" ONCLICK="window.location.href='/form'"> 
+	</FORM></span>
 			<ol>
 			{% for event in event_list %}
 			<div id ="event" >
