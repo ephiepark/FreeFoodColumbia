@@ -1,15 +1,23 @@
 <html>
+	<head>
+        <title>Free Food Columbia</title>
+        <link rel="stylesheet" href="test.css" type="text/css" />
+	</head>
 	<body>
+		<div id=main>
 		<h1>Free Food Columbia</h1>
-		<ol>
+		<div id=map><img src="http://www.columbia.edu/about_columbia/map/images/maps/map.png" width=400></div>
+		<div id=list>
+			<ol>
 			{% for event in event_list %}
 			<li>
-			{{event.date}} 
-			{{event.location}}
-			{{event.description}}
-			{{event.source}}
+			<span class=date>{{event.date}}</span>
+			<span class=location>{{event.location}}</span>
+			<span class=description>{{event.description}}</span>
+			<span class=source>{{event.source}}</span>
 			</li>
 			{% endfor %}
-		</ol>
+			</ol>
+		</div>
 	</body>
 </html>
