@@ -77,7 +77,7 @@ def pupin(request):
 #	else: place = location
 #	gotplace = "yes"
 	
-  return render_to_response('pupin.tmpl', {'event_list':event_list}, context_instance=RequestContext(request))
+  return render_to_response('location.tmpl', {'event_list':event_list}, context_instance=RequestContext(request))
 
   
 def parseDate(date_list):

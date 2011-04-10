@@ -3,8 +3,8 @@ from django.conf import settings
 from django.conf.urls.defaults import *
 from FreeFoodColumbia.freefoodcolumbia.views import index, form, pupin, food
 # Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+from django.contrib import admin
+admin.autodiscover()
 
 urlpatterns = patterns('',
                        ('^$',index),
@@ -18,7 +18,7 @@ urlpatterns = patterns('',
     # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    # (r'^admin/', include(admin.site.urls)),
+    (r'^admin/', include(admin.site.urls)),
 )
 
 
