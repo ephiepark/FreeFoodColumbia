@@ -30,6 +30,10 @@ li {
     -khtml-border-radius: 20px;
     border-radius: 20px;
 }
+li a:link, a:visited {
+	color: #4b8cb0;
+	text-align: right;
+}
 ol span {
     display: block;
 }
