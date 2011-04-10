@@ -15,6 +15,15 @@ h1 {
     margin-top: 0px;
     width: 290px;
 }
+#formdiv {
+    padding: 10px;
+    background: #b9d0e9;
+    border: 3px solid #ccc;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+}
 li {
     list-style-type: none;
     margin-bottom: 10px;
