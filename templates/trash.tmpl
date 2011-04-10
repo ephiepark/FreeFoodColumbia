@@ -1,0 +1,15 @@
+<html>
+	<body>
+		<h1>Free Food Columbia</h1>
+		<ol>
+			{% for event in event_list %}
+			<li>
+			{{event.date}} 
+			{{event.location}}
+			{{event.description}}
+			{{event.source}}
+			</li>
+			{% endfor %}
+		</ol>
+	</body>
+</html>

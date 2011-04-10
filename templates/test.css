@@ -1,0 +1,21 @@
+#main {
+    width: 700;
+    margin: 0 auto;
+}
+#map {
+    float: right;
+}
+h1 {
+    display: block;
+    text-align: center;
+}
+ol {
+    list-style-type: none;
+}
+li {
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+ol span {
+    display: block;
+}
