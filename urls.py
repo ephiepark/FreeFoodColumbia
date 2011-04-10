@@ -9,7 +9,7 @@ from FreeFoodColumbia.freefoodcolumbia.views import index, form
 urlpatterns = patterns('',
                        ('^$',index),
                        ('^form/$',form),
-					   ('^johnjay/$',form),
+					   ('^johnjay/$',johnjay),
     # Example:
     # (r'^FreeFoodColumbia/', include('FreeFoodColumbia.foo.urls')),
 
