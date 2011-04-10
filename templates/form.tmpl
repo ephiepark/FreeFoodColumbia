@@ -2,23 +2,33 @@
 	<head>
         <title>Free Food Columbia</title>
         <link rel="stylesheet" href="{{MEDIA_URL}}css/test.css" type="text/css" />
+	<style>
+	#main {width: 500px;}
+	</style>
 	</head>
 	<body>
 		<center>
-			<div id=formdiv>
-		<p>
-		Date and Time has to be in the following format: <br />
-		DAY, DATE MONTH YEAR at STARTTIME to ENDTIME <br />
-		detail-link has to include 'http://' 
+			<div id=main>
+		<p id=forminstructions>
+		1. Date and Time has to be in the following format: <br />
+		DAY, DATE MONTH YEAR at STARTTIME to ENDTIME <br /><br>
+		2. detail-link has to include 'http://' 
 		</p>
-		<form name="input" action="/" method="get">
+		<form id=form name="input" action="/" method="get">
 				
-				Date and Time: <input type="text" name="datetime" /> 
-				Location: <input type="text" name="location" /> <br />
-				Description: <input type="text" name="description" />
-				detail-link: <input type="text" name="source" /> <br />
+				<p>Date and Time: <input type="text" name="datetime" /></p>
+				<p>Location:
+				<select name="building">
+				{% for b in building_list %}
+				<option value="{{b}}">{{b}}</option>
+				{% endfor %}
+				</select></p>
+				<p>Room: <input type="text" name="room" /></p>
+				<p>Description: <input type="text" name="description" /></p>
+				<p>detail-link: <input type="text" name="source" /></p>
 				<input type="submit" value="Submit" />
 		</form>
+		<a href="javascript:history.back()">Go back</a>
 			</div>
 	</body>
 	</html>

@@ -31,12 +31,24 @@ li {
     border-radius: 20px;
 }
 
-#formdiv {
+#form {
     padding: 10px;
     background: #b9d0e9;
     border: 3px solid #6daed1;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
 }
-
+#forminstructions {
+    padding: 10px;
+    background: #FF9933;
+    border: 3px solid #FF3300;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+}
 #foodbutton{
     list-style-type: none;
     margin: 0px;
@@ -54,14 +66,14 @@ li {
 }
 
 
-li a:link, a:visited {
+a:link, a:visited {
     color: #4b8cb0;
     text-align: right;
     display: block;
     text-decoration: none;
     border-top: 1px dotted #6daed1;
 }
-li a:hover, a:active {
+a:hover, a:active {
     text-decoration: underline;
 	
 	
@@ -71,7 +83,7 @@ a:active {
 }
 
 div#style{
-	visiblity: hidden;
+    visibility: hidden;
 }
 ol span {
     display: block;
