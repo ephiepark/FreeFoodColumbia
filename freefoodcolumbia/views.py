@@ -4,6 +4,7 @@ from freefoodcolumbia.models import Event
 
 def index(request):
 #  name = 'freefoodColumbia App' # whats this for?
+  
   event_list = Event.objects.all()
   event_list1 = []
   i=0
@@ -29,20 +30,35 @@ def parseTime(strTime):
     hour = int(strTime[0:2])
 
   if strTime.rfind("pm") != -1 and strTime.rfind("am") == -1:
+    if hour == 12:
+      hour = 0
     hour += 12
+
+  if strTime.rfind("pm") == -1 and strTime.rfind("am") == -1:
+    if hour < 9:
+      hour += 12
+  
   time = hour * 60 + minute
   return time
- 
+
+def form(request):
+  if 'datetime' in request.GET and request.GET['datetime']:
+    e = Event(date = request.GET['datetime'], location = request.GET['location'], description = request.GET['description'], source = request.GET['source'])
+    e.save()
+  return render_to_response('form.tmpl')
+  
 def parseDate(date_list):
   monthName = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep","Oct","Nov","Dec"]
   dateD = int(date_list.date[5:7])
-  numberMonth = 1;
+  numberMonth = 1
+  month = 1
+#  raise Exception(date_list.date[8:11])
   for nameMonth in monthName:
     if nameMonth == date_list.date[8:11]:
       month = numberMonth
     numberMonth = numberMonth + 1
   year = int(date_list.date[12:16])
-  time = parseTime(date_list.date[20:27])
+  time = parseTime(date_list.date[20:])
   return dateD*24*60 + month*24*60*30 + year*24*60*365 + time
   
   
