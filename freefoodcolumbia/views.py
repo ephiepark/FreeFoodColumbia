@@ -52,16 +52,17 @@ def form(request):
   return render_to_response('form.tmpl')
   
 def johnjay(request):
+  #event_list = Event.objects.get(location='John Jay')
   event_list = Event.objects.all()
   event_list1 = []
   i=0
   for event in event_list:
-	event_list1.append((parseDate(event),i))
-	i=i+1
+    event_list1.append((parseDate(event),i))
+    i=i+1
   event_list1.sort()
   event_list2 = []
   for e in event_list1:
-	event_list2.append(event_list[e[1]])
+    event_list2.append(event_list[e[1]])
   return render_to_response('johnjay.tmpl', {'event_list':event_list2}, context_instance=RequestContext(request))
 
   

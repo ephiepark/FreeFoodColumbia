@@ -13,12 +13,22 @@
 			$("#x-coordinate").text( x );
 			$("#y-coordinate").text( y );
 		});
+		$("#dialog").dialog();
+});
+
 	});
+	</script>
+	<script>
+	function openPage(url) {
+    var link = url;
+    window.open(link, 'winMenu', 'width=600,height=400,location=1,menubar=1,resizable=1,scrollbars=1,status=1,toolbar=1');
+}
 	</script>
 	</head>
 	<body>
 		<map name="buildings">
-			<area href="window.location.href='/form'" onclick="" alt="Pupin" title="Pupin" shape="rect" coords="265, 26, 328, 49">
+			<area href="javascript:void()" onclick="openPage('johnjay')" alt="Pupin" title="Pupin" shape="rect" coords="265, 26, 328, 49">
+			<!--<area href="johnjay" onclick="" alt="Pupin" title="Pupin" shape="rect" coords="265, 26, 328, 49">-->
 
 			<area href="" onclick="" alt="Pupin" title="Pupin" shape="rect" coords="265, 26, 328, 49">
 			<area href="" alt="NorthWestCorner" title="NoCo" shape="poly" coords="235, 26, 265, 26, 265, 50, 258, 50, 258, 96, 235, 96, 235, 26">
@@ -35,7 +45,6 @@
 
 		<h1><img src="http://i56.tinypic.com/rh1myd.png"/></h1>
 		<div id=map>
-
 		<img id=image src="http://oi53.tinypic.com/28uhj47.jpg" usemap ="#buildings" width=700>
 		</div>
 		<div id=list><br>
@@ -62,14 +71,14 @@
 			} 
 			} 
 			</script>
-			<a href="#" onMouseOver="ShowPicture('Style',1)" onMouseOut="ShowPicture('Style',0)">
+			<!--<a href="#" onMouseOver="ShowPicture('Style',1)" onMouseOut="ShowPicture('Style',0)">-->
 			<li>
 			<span class=date><b>Time: </b>{{event.date}}</span>
 			<span class=location><b>Location: </b>{{event.location}}</span>
 			<span class=description><b>Event: </b>{{event.description}}</span>
 			<span class=source><a href = {{event.source}}> See More </a></span>
 			</li>
-			</a>
+			<!--</a>-->
 			</div>
 			{% endfor %}
 			</ol>

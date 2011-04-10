@@ -9,8 +9,7 @@
 		
 	<ol>
 			{% for event in event_list %}
-			if ({{event.location}}==John Jay)
-			{
+			At {{event.location}}
 				<div id ="event" >
 				<li>
 				<span class=date><b>Time: </b>{{event.date}}</span>
@@ -19,7 +18,7 @@
 				</li>
 				</a>
 				</div>
-			}
+			
 			{% endfor %}
 			</ol>
 	</html>

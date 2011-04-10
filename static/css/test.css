@@ -31,6 +31,11 @@ li {
     border-radius: 20px;
 }
 
+#formdiv {
+    padding: 10px;
+    background: #b9d0e9;
+    border: 3px solid #6daed1;
+}
 
 #foodbutton{
     list-style-type: none;
