@@ -9,7 +9,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
                        ('^$',index),
                        ('^form/$',form),
-					   ('^location/(.+)/', food),
+                       ('^location/(.+)/', food),
                        #('^pupin/$',pupin),
     # Example:
     # (r'^FreeFoodColumbia/', include('FreeFoodColumbia.foo.urls')),

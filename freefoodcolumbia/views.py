@@ -4,6 +4,18 @@ from freefoodcolumbia.models import Event
 import time
 from datetime import datetime
 
+# Same list as in scrape.py except without repetitions
+ColumbiaBuildings = ['Lerner', 'Butler', 'John Jay', 'Carmen', 'Hartley', 'Wallach',
+            'Hamilton', 'Furnald', 'Mcbain', 'Broadway', 'Schapiro', 'Ruggles',
+            'Hogan', 'Watt', 'East Campus/EC', 'Journalism', 'Kent', 'Dodge',
+            'Philosophy', 'Maison Francaise', 'Buell', 'Lewisohn', 'Mathematics',
+            'Math', 'Pupin', 'Northwest Corner/NoCo', 'Mudd', 'Schermerhorn',
+            'Avery', 'Fayerweather', 'Havemeyer', 'Uris', 'Wien', 'Woodbridge', 'River',
+            'Fitness Center', 'Low Plaza', 'Furnald Lawn', 'Teacher\'s College',
+            'Low Library', 'SIPA/International Affairs', 'Law School', 'Casa Italiana',
+            'Casa Hispanica', 'Earl', 'Barnard', 'Diana', 'Vag', 'Hewitt', 'Altschul',
+            'Claremont', 'College Walk', 'Van Am Quad']
+
 def index(request):
 #  name = 'freefoodColumbia App' # whats this for?
   
@@ -47,9 +59,9 @@ def parseTime(year, month, dateD, strTime):
 
 def form(request):
   if 'datetime' in request.GET and request.GET['datetime']:
-    e = Event(date = request.GET['datetime'], location = request.GET['location'], description = request.GET['description'], source = request.GET['source'])
+    e = Event(date = request.GET['datetime'], location = request.GET['building'] + request.GET['room'], description = request.GET['description'], source = request.GET['source'])
     e.save()
-  return render_to_response('form.tmpl')
+  return render_to_response('form.tmpl', {'building_list':ColumbiaBuildings}, context_instance=RequestContext(request))
   
 def food(request, location):
 	event_list = Event.objects.filter(location__icontains=location)
