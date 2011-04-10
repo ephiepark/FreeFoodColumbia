@@ -26,6 +26,9 @@ li {
     -khtml-border-radius: 20px;
     border-radius: 20px;
 }
+li a:link, a:visited {
+	color: white;
+}
 ol span {
     display: block;
 }
