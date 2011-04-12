@@ -25,7 +25,7 @@ def index(request):
   for event in event_list:
     event_list1.append((parseDate(event),i))
     i=i+1
-  event_list1.sort()
+  event_list1.sort(reverse = True)
   event_list2 = []
   for e in event_list1:
     event_list2.append(event_list[e[1]])
